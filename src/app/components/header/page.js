@@ -59,7 +59,7 @@ const Header = () => {
                                         }}
                                     >
                                         <a onClick={(e) => e.preventDefault()}>
-                                            <Space className='font-semibold hover:bg-[#437EF7] hover:text-white p-2 rounded'>
+                                            <Space className='cursor-pointer font-semibold hover:bg-[#437EF7] hover:text-white p-2 rounded'>
                                                 {navItem.navLabel}
                                                 <DownOutlined />
                                             </Space>
