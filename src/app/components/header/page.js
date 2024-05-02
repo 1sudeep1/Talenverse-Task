@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import navMenu from './navData'
@@ -40,13 +40,23 @@ const Header = () => {
     };
     const closeDrawer = () => {
         setIsDrawerOpen(false);
+        window.scrollTo(0, 0);
     };
+
+    useEffect(() => {
+        if (isDrawerOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [isDrawerOpen]);
+    
     return (
         <>
             <header className="text-black body-font border text-[15px] lh-[22px]">
                 <div className="container mx-auto flex justify-between flex-wrap p-5 lg:flex-row items-center">
                     <Link href='/' className="flex title-font font-medium items-center text-gray-900 lg:mb-0">
-                        <Image src='/company-logo.svg' width={160} height={40} alt='company-logo' />
+                        <Image src='/images/company-logo.svg' width={160} height={40} alt='company-logo' />
                     </Link>
 
                     <nav className="hidden mx-auto lg:ms-20 lg:ml-4 lg:py-1 lg:pl-4 lg:flex flex-wrap items-center text-base justify-center lg:gap-2">
@@ -81,7 +91,7 @@ const Header = () => {
                         ))}
                     </div>
                     <div onClick={openDrawer} data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example" className='lg:hidden'>
-                        <Image src='/menuIcon.svg' width={24} height={24} alt='menu-icon' />
+                        <Image src='/images/menuIcon.svg' width={24} height={24} alt='menu-icon' />
                     </div>
                     <div id="drawer-example" className={`fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto duration-700 transition-transform ${isDrawerOpen ? '' : '-translate-x-full'} bg-white w-full dark:bg-gray-800`} tabIndex={-1} aria-labelledby="drawer-label">
                         <div className='flex flex-col items-center gap-3'>
@@ -92,6 +102,12 @@ const Header = () => {
                                     )
                                 })}
                             </nav>
+                            <div className='lg:hidden justify-between gap-5'>
+                                {authButton.map((authItem, authId) => (
+                                    <button key={authId} onClick={() => setIsActive(authItem.buttonName)} className={`${isActive === authItem.buttonName ? 'bg-[#437EF7] text-white' : 'text-[#437EF7]'} hover:bg-[#437EF7] hover:text-white  p-2 font-semibold focus:outline-none rounded mt-4 md:mt-0`}>{authItem.buttonName}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
                         <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
                             <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">

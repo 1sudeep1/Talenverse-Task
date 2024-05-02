@@ -1,26 +1,26 @@
 const companyLogoData= [
     {
-        companyLogo:'/twilio-logo.svg',
+        companyLogo:'/images/twilio-logo.svg',
         companyAlt:'Twilio company logo'
     },
     {
-        companyLogo:'/slack.svg',
+        companyLogo:'/images/slack.svg',
         companyAlt:'Slack company logo'
     },
     {
-        companyLogo:'/google-logo.svg',
+        companyLogo:'/images/google-logo.svg',
         companyAlt:'Google company logo'
     },
     {
-        companyLogo:'/paypal-logo.svg',
+        companyLogo:'/images/paypal-logo.svg',
         companyAlt:'Paypal company logo'
     },
     {
-        companyLogo:'/pinterest-logo.svg',
+        companyLogo:'/images/pinterest-logo.svg',
         companyAlt:'Pinterest company logo'
     },
     {
-        companyLogo:'/mailchimp-logo.svg',
+        companyLogo:'/images/mailchimp-logo.svg',
         companyAlt:'Mailchimp company logo'
     },
     

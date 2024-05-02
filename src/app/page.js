@@ -59,15 +59,15 @@ export default function Home() {
             <p className="mb-6 leading-relaxed font-normal">Velit purus egestas tellus phasellus. Mattis eget sed faucibus magna vulputate pellentesque a diam tincidunt. Aenean malesuada tellus tellus faucibus mauris quisque mauris in.</p>
             <ul>
               <li className="flex items-center gap-2 my-[10px]">
-                <Image src='/check.svg' width={18} height={18} alt="check icon" />
+                <Image src='/images/check.svg' width={18} height={18} alt="check icon" />
                 <p>Enterprise-grade security</p>
               </li>
               <li className="flex items-center gap-2 my-[10px]">
-                <Image src='/check.svg' width={18} height={18} alt="check icon" />
+                <Image src='/images/check.svg' width={18} height={18} alt="check icon" />
                 <p>99.9% guaranteed uptime SLA</p>
               </li>
               <li className="flex items-center gap-2 mb-10">
-                <Image src='/check.svg' width={18} height={18} alt="check icon" />
+                <Image src='/images/check.svg' width={18} height={18} alt="check icon" />
                 <p>Designated customer success team</p>
               </li>
             </ul>
@@ -80,7 +80,7 @@ export default function Home() {
 
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <Image className="object-cover object-center rounded" alt="hero" src="/left-right.svg" width={560} height={560} />
+            <Image className="object-cover object-center rounded" alt="hero" src="/images/left-right.svg" width={560} height={560} />
           </div>
         </div>
       </section>
@@ -125,7 +125,7 @@ export default function Home() {
         <div className="container px-5 pb-8 md:pb-16 mx-auto">
           <div className="flex flex-col text-center w-full mb-16">
             <h1 className="text-2xl md:text-[22px] lg:text-[32px] font-bold title-font mb-4 text-gray-900">Frequently asked questions</h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-[#5F6D7E]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-[#5F6D7E]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, </p>
           </div>
           <div className="border-[#EAEBF0]">
             <div className="flex justify-between items-center border px-8 py-5">

@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="container px-5 mx-auto flex md:items-center lg:items-start lg:flex-nowrap md:flex-row md:flex-wrap flex-wrap justify-between">
                     <div className="w-full md:w-64 flex-shrink-0 mx-auto lg:me-32 md:me-52  md:text-left flex-col">
                         <Link href='/' className="flex title-font font-medium text-gray-900 lg:mb-0">
-                            <Image src='/company-logo.svg' width={160} height={40} alt='company-logo' />
+                            <Image src='/images/company-logo.svg' width={160} height={40} alt='company-logo' />
                         </Link>
                         <p className="mt-2 text-base text-gray-500">Generate outside the box thinking with the possibility to targtet the low.</p>
                         <ul className='md:hidden my-5 flex lg:flex ms-3 justify-between md:justify-start gap-4 text-2xl '>
@@ -43,7 +43,7 @@ const Footer = () => {
                 {/* <div className="py-4 px-5"> */}
                 <div className='flex flex-col items-center'>
                 <div className='p-3 rounded-full bg-[#F5FAFF]'>
-                        <Image src='/footer-icon.svg' width={24} height={24} alt='company-logo' />
+                        <Image src='/images/footer-icon.svg' width={24} height={24} alt='company-logo' />
                     </div>
                 </div>
                     <div className='flex items-center justify-center md:justify-between lg:justify-center mx-auto px-5 py-4'>
