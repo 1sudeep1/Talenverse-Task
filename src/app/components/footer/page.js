@@ -7,7 +7,7 @@ import footerLinksData from './footerLinksData'
 const Footer = () => {
     return (
         <>
-            <footer className="body-font mb-10">
+            <footer className="body-font lg:my-16 md:my-10 my-8">
                 <div className="container px-5 mx-auto flex md:items-center lg:items-start lg:flex-nowrap md:flex-row md:flex-wrap flex-wrap justify-between">
                     <div className="w-full md:w-64 flex-shrink-0 mx-auto lg:me-32 md:me-52  md:text-left flex-col">
                         <Link href='/' className="flex title-font font-medium text-gray-900 lg:mb-0">
@@ -45,7 +45,6 @@ const Footer = () => {
                 <div className='p-3 rounded-full bg-[#F5FAFF]'>
                         <Image src='/footer-icon.svg' width={24} height={24} alt='company-logo' />
                     </div>
-
                 </div>
                     <div className='flex items-center justify-center md:justify-between lg:justify-center mx-auto px-5 py-4'>
                         <p className="text-gray-500 text-center lg:text-center ">© 2023 Lookscout.
@@ -60,7 +59,6 @@ const Footer = () => {
                         </ul>
                     </div>
                 {/* </div> */}
-
             </footer>
 
         </>
