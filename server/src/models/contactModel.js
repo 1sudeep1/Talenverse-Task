@@ -1,5 +1,8 @@
+//importing mongoose
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+
+//defining model schema for contact
 const contactSchema = new Schema({ 
     fullName: String,// String is shorthand for {type: String}
     email:{type:String, unique:true, required:true},
@@ -11,4 +14,5 @@ const contactSchema = new Schema({
   
   const Contact = mongoose.model('Contact', contactSchema);
   
+  //exporting the contact model
   module.exports=Contact

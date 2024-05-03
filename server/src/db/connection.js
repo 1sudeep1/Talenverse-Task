@@ -1,3 +1,4 @@
+//importing mongoose
 const mongoose = require('mongoose');
 const connection= async ()=>{
   try{
@@ -12,4 +13,5 @@ const connection= async ()=>{
   }
 }
 
+//exporting the connection
 module.exports=connection

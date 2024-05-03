@@ -39,28 +39,24 @@ const Footer = () => {
                         )
                     })}
                 </div>
-
-                {/* <div className="py-4 px-5"> */}
                 <div className='flex flex-col items-center'>
-                <div className='p-3 rounded-full bg-[#F5FAFF]'>
+                    <div className='p-3 rounded-full bg-[#F5FAFF]'>
                         <Image src='/images/footer-icon.svg' width={24} height={24} alt='company-logo' />
                     </div>
                 </div>
-                    <div className='flex items-center justify-center md:justify-between lg:justify-center mx-auto px-5 py-4'>
-                        <p className="text-gray-500 text-center lg:text-center ">© 2023 Lookscout.
-                            <Link href="#" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">All right Reserved.</Link>
-                        </p>
-                        <ul className='hidden lg:hidden md:flex justify-between gap-4 text-2xl'>
-                            {socialIconData.map((socialItem, socialId) => {
-                                return (
-                                    <li key={socialId}><Link href='#'>{socialItem.socialIcon}</Link></li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                {/* </div> */}
+                <div className='flex items-center justify-center md:justify-between lg:justify-center mx-auto px-5 py-4'>
+                    <p className="text-gray-500 text-center lg:text-center ">© 2023 Lookscout.
+                        <Link href="#" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">All right Reserved.</Link>
+                    </p>
+                    <ul className='hidden lg:hidden md:flex justify-between gap-4 text-2xl'>
+                        {socialIconData.map((socialItem, socialId) => {
+                            return (
+                                <li key={socialId}><Link href='#'>{socialItem.socialIcon}</Link></li>
+                            )
+                        })}
+                    </ul>
+                </div>
             </footer>
-
         </>
     )
 }

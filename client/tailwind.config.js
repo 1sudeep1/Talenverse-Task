@@ -14,6 +14,17 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      //for animation of fixed navbar
+      animation: {
+        slidedown: 'slideDown 0.3s ease-in-out'
+      },
+
+      keyframes: {
+        slideDown: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+    },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

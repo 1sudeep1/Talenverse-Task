@@ -4,8 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import navMenu from './navData'
 import authButton from './authButton'
-import { DownOutlined } from '@ant-design/icons';
-import { Dropdown, Space } from 'antd';
+import { IoIosArrowDown } from "react-icons/io";
+import { Dropdown} from 'antd';
+
 const items = [
     {
         label: (
@@ -35,6 +36,8 @@ const items = [
 const Header = () => {
     const [isActive, setIsActive] = useState('Log In')
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+
     const openDrawer = () => {
         setIsDrawerOpen(true);
     };
@@ -50,16 +53,35 @@ const Header = () => {
             document.body.style.overflow = 'unset';
         }
     }, [isDrawerOpen]);
-    
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Check scroll position and update isNavbarFixed state
+            if (window.scrollY > 200) { // Change 100 to the scroll position where you want the navbar to be fixed
+                setIsNavbarFixed(true);
+            } else {
+                setIsNavbarFixed(false);
+            }
+        };
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up the event listener
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
         <>
-            <header className="text-black body-font border text-[15px] lh-[22px]">
+            <header className={`text-black body-font border text-[15px] lh-[22px] ${isNavbarFixed ? 'fixed top-0 left-0 w-full z-50 animate-slidedown bg-white' : ''}`}>
                 <div className="container mx-auto flex justify-between flex-wrap p-5 lg:flex-row items-center">
                     <Link href='/' className="flex title-font font-medium items-center text-gray-900 lg:mb-0">
                         <Image src='/images/company-logo.svg' width={160} height={40} alt='company-logo' />
                     </Link>
 
                     <nav className="hidden mx-auto lg:ms-20 lg:ml-4 lg:py-1 lg:pl-4 lg:flex flex-wrap items-center text-base justify-center lg:gap-2">
+                        {/* navbar is dynamic so we have dropdown navitem so we used switch case */}
                         {navMenu.map((navItem, navId) => {
                             switch (navItem.type) {
                                 case "dropdown":
@@ -69,10 +91,10 @@ const Header = () => {
                                         }}
                                     >
                                         <a onClick={(e) => e.preventDefault()}>
-                                            <Space className='cursor-pointer font-semibold hover:bg-[#437EF7] hover:text-white p-2 rounded'>
+                                            <div className='flex items-center gap-2 me-3 cursor-pointer font-semibold hover:bg-[#437EF7] hover:text-white p-2 rounded'>
                                                 {navItem.navLabel}
-                                                <DownOutlined />
-                                            </Space>
+                                                <IoIosArrowDown />
+                                            </div>
                                         </a>
                                     </Dropdown>
                                     break;
